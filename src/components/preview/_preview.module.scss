@@ -1,0 +1,76 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.preview {
+  padding: 40px 0 100px;
+  width: 60%;
+  display: grid;
+  grid-template-areas:
+    'name info lang'
+    'img img img';
+
+  &__name {
+    grid-area: name;
+    color: $primary-name-color;
+    font-weight: 700;
+    font-size: 3.125rem;
+    line-height: 1.18;
+    max-width: 220px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__info {
+    grid-area: info;
+    display: grid;
+    align-content: end;
+    justify-content: center;
+  }
+
+  &__profession {
+    color: $primary-text-color;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.22;
+    margin: 0 0 7px 0;
+  }
+
+  &__additional {
+    color: $primary-text-color;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.22;
+  }
+
+  &__langPanel {
+    grid-area: lang;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+  }
+
+  &__langList {
+    @include reset-list;
+    align-self: end;
+    display: flex;
+    gap: 5px;
+    transform: rotate(-90deg) translateY(25px) translateX(28px);
+  }
+
+  &__langListItem {
+    &:nth-of-type(odd) {
+      padding: 0 5px 0 0;
+      border-right: 1px solid $primary-text-color;
+    }
+  }
+
+  &__langLink {
+    @include reset-link;
+  }
+
+  &__photo {
+    grid-area: img;
+    width: 100%;
+    padding: 50px 0 0 0;
+  }
+}
